@@ -11,3 +11,12 @@ block content
     button(type="submit") Submit
   if message
     p=message
+  form(method="POST" action="/")
+    label(for="userText2") Enter Your Text Here:
+    br
+    input(type="text" id="userText2" name="userText" value=`${phrase}`)
+    br
+    br
+    button(type="submit") Submit
+  if message
+    p=message

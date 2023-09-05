@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index', {
+    phrase: "tacocat"
+  });
 });
 
 function checkPalindrome(phrase){
@@ -31,6 +33,14 @@ router.post( '/', function(req, res){
     message: getResultDescription(req.body.userText)
   })
 })
+
+router.post( '/', function(req, res){
+  res.render('index', {
+    phrase: req.body.userText2,
+    message: getResultDescription(req.body.userText2)
+  })
+})
+
 
 module.exports = router;
 
